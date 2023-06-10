@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Theme.DishesShop.Headline1">
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">@dimen/text_size_18</item>
+        <item name="android:fontFamily">@font/sf_pro_display_regular</item>
+        <item name="android:fontWeight">500</item>
+    </style>
+
+    <style name="Theme.DishesShop.Subhead1">
+        <item name="android:textColor">@color/black_50</item>
+        <item name="android:textSize">@dimen/text_size_14</item>
+        <item name="android:fontFamily">@font/sf_pro_display_regular</item>
+        <item name="android:fontWeight">400</item>
+    </style>
+
+    <style name="Theme.DishesShop.KitchenName">
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">@dimen/text_size_20</item>
+        <item name="android:fontFamily">@font/sf_pro_display_regular</item>
+        <item name="android:fontWeight">500</item>
+    </style>
+
+    <style name="Theme.DishesShop.Description">
+        <item name="android:textSize">@dimen/text_size_14</item>
+        <item name="android:fontFamily">@font/sf_pro_display_regular</item>
+        <item name="android:fontWeight">400</item>
+    </style>
+
+    <style name="Theme.DishesShop.FoodName" parent="Theme.DishesShop.Description">
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="Theme.DishesShop.FoodDescription" parent="Theme.DishesShop.Description">
+        <item name="android:textColor">@color/black_65</item>
+    </style>
+
+    <style name="Theme.DishesShop.FoodPrice" parent="Theme.DishesShop.Description">
+        <item name="android:textColor">@color/black_40</item>
+    </style>
+
+    <style name="Theme.DishesShop.TabText">
+        <item name="android:textColor">@color/navigation_tab_color</item>
+        <item name="android:textSize">@dimen/text_size_10</item>
+        <item name="android:fontFamily">@font/sf_pro_display_regular</item>
+        <item name="android:fontWeight">500</item>
+    </style>
+</resources>

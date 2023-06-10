@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">DishesShopProject</string>
+    <string name="main">Main</string>
+    <string name="search">Search</string>
+    <string name="cart">Cart</string>
+    <string name="account">Account</string>
+    <string name="add_to_cart">Add to cart</string>
+    <string name="pay">Pay %d ₽</string>
+</resources>
