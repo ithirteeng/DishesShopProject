@@ -21,5 +21,4 @@ dependencies {
     implementation Dependencies.CICERONE
 
     implementation project(":common:design")
-    implementation project(":common:extensions")
 }

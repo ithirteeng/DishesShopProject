@@ -46,4 +46,16 @@
         <item name="android:fontFamily">@font/sf_pro_display_regular</item>
         <item name="android:fontWeight">500</item>
     </style>
+
+    <style name="Theme.DishesShop.ProgressBar" parent="Widget.AppCompat.ProgressBar">
+        <item name="android:translationZ">10dp</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:indeterminateTint">@color/blue</item>
+        <item name="android:visibility">gone</item>
+    </style>
+
+    <style name="Theme.DishesShop.Toolbar">
+        <item name="android:minHeight">@dimen/size_76</item>
+        <item name="android:background">@color/main_white</item>
+    </style>
 </resources>
