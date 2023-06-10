@@ -11,6 +11,7 @@
     <dimen name="size_76">76dp</dimen>
     <dimen name="size_148">148dp</dimen>
 
+    <dimen name="padding_8">8dp</dimen>
     <dimen name="padding_12">12dp</dimen>
     <dimen name="padding_16">16dp</dimen>
 

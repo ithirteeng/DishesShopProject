@@ -7,11 +7,13 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.github.terrakok.cicerone.androidx.FragmentScreen
+import com.ithirteeng.common.helpers.DateHelper
 import com.ithirteeng.features.kitchens.R
 import com.ithirteeng.features.kitchens.databinding.FragmentKitchensBinding
 import com.ithirteeng.features.kitchens.presentation.KitchensViewModel
 import com.ithirteeng.features.kitchens.ui.adapter.CategoriesAdapter
 import org.koin.androidx.viewmodel.ext.android.viewModel
+
 
 class KitchensFragment : Fragment() {
 
@@ -39,13 +41,13 @@ class KitchensFragment : Fragment() {
         viewModel.getCategories { showError(it) }
         observeCategoriesLiveData()
 
-
         return binding.root
     }
 
     private fun setupViews() {
         binding.progressBar.visibility = View.VISIBLE
         binding.categoriesRecyclerView.adapter = categoriesAdapter
+        binding.dateTextView.text = DateHelper.getDateInFullFormat()
     }
 
     private fun observeCategoriesLiveData() {

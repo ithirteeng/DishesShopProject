@@ -22,5 +22,6 @@ dependencies {
 
     implementation project(":common:design")
     implementation project(":common:extensions")
+    implementation project(":common:helpers")
     implementation project(":common:network")
 }

@@ -9,6 +9,6 @@
     <string name="add_to_cart">Add to cart</string>
     <string name="pay">Pay %d ₽</string>
     <string name="some_category">Some category</string>
-    <string name="some_location">Some location</string>
+    <string name="some_location">Location</string>
     <string name="some_date">Some date</string>
 </resources>

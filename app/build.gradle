@@ -21,6 +21,7 @@ dependencies {
     implementation project(":common:design")
     implementation project(":common:network")
     implementation project(":common:extensions")
+    implementation project(":common:helpers")
 
     implementation project(":features:mainhost")
     implementation project(":features:main")
