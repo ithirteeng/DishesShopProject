@@ -25,7 +25,7 @@ class KitchensFragment : Fragment() {
 
     private val categoriesAdapter by lazy {
         CategoriesAdapter {
-          //  viewModel.navigateToDishesScreen(it.name)
+            //  viewModel.navigateToDishesScreen(it.name)
         }
     }
 
@@ -35,7 +35,7 @@ class KitchensFragment : Fragment() {
     ): View {
         val layout = inflater.inflate(R.layout.fragment_kitchens, container, false)
         binding = FragmentKitchensBinding.bind(layout)
-        setupRecyclerView()
+        setupViews()
         viewModel.getCategories { showError(it) }
         observeCategoriesLiveData()
 
@@ -43,17 +43,20 @@ class KitchensFragment : Fragment() {
         return binding.root
     }
 
-    private fun setupRecyclerView() {
+    private fun setupViews() {
+        binding.progressBar.visibility = View.VISIBLE
         binding.categoriesRecyclerView.adapter = categoriesAdapter
     }
 
     private fun observeCategoriesLiveData() {
         viewModel.categoriesLiveData.observe(this.viewLifecycleOwner) {
+            binding.progressBar.visibility = View.GONE
             categoriesAdapter.submitList(it)
         }
     }
 
     private fun showError(throwable: Throwable) {
+        binding.progressBar.visibility = View.GONE
         Toast.makeText(requireContext(), throwable.message, Toast.LENGTH_SHORT).show()
     }
 
