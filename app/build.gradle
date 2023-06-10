@@ -22,6 +22,7 @@ dependencies {
     implementation project(":common:network")
     implementation project(":common:extensions")
     implementation project(":common:helpers")
+    implementation project(':common:cart')
 
     implementation project(":features:mainhost")
     implementation project(":features:main")
