@@ -17,3 +17,12 @@ dependencyResolutionManagement {
 rootProject.name = "DishesShopProject"
 include()
 include ':app'
+include ':common'
+include ':common:design'
+include ':common:network'
+include ':features'
+include ':features:mainhost'
+include ':features:main'
+include ':features:category'
+include ':features:product'
+include ':features:bucket'
