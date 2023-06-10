@@ -24,5 +24,8 @@ interface CartDao {
     @Query("SELECT * FROM cart_table")
     fun getAllDishesFromCart(): List<CartEntity>?
 
+    @Query("DELETE FROM cart_table")
+    fun clearCart()
+
 
 }
