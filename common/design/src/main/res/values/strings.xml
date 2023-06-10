@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="image_content_description">This is an image</string>
     <string name="app_name">DishesShopProject</string>
     <string name="main">Main</string>
     <string name="search">Search</string>
@@ -7,4 +8,5 @@
     <string name="account">Account</string>
     <string name="add_to_cart">Add to cart</string>
     <string name="pay">Pay %d ₽</string>
+    <string name="some_category">Some category</string>
 </resources>

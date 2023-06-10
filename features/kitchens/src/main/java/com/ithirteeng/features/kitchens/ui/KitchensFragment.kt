@@ -10,6 +10,7 @@ import com.github.terrakok.cicerone.androidx.FragmentScreen
 import com.ithirteeng.features.kitchens.R
 import com.ithirteeng.features.kitchens.databinding.FragmentKitchensBinding
 import com.ithirteeng.features.kitchens.presentation.KitchensViewModel
+import com.ithirteeng.features.kitchens.ui.adapter.CategoriesAdapter
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class KitchensFragment : Fragment() {
@@ -22,22 +23,38 @@ class KitchensFragment : Fragment() {
 
     private val viewModel: KitchensViewModel by viewModel()
 
+    private val categoriesAdapter by lazy {
+        CategoriesAdapter {
+          //  viewModel.navigateToDishesScreen(it.name)
+        }
+    }
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?,
     ): View {
         val layout = inflater.inflate(R.layout.fragment_kitchens, container, false)
         binding = FragmentKitchensBinding.bind(layout)
+        setupRecyclerView()
+        viewModel.getCategories { showError(it) }
+        observeCategoriesLiveData()
 
-        viewModel.getCategories {
-            Toast.makeText(requireContext(), it.message, Toast.LENGTH_SHORT).show()
-        }
-
-        viewModel.categoriesLiveData.observe(this.viewLifecycleOwner) {
-            Toast.makeText(requireContext(), "OKK", Toast.LENGTH_SHORT).show()
-        }
 
         return binding.root
+    }
+
+    private fun setupRecyclerView() {
+        binding.categoriesRecyclerView.adapter = categoriesAdapter
+    }
+
+    private fun observeCategoriesLiveData() {
+        viewModel.categoriesLiveData.observe(this.viewLifecycleOwner) {
+            categoriesAdapter.submitList(it)
+        }
+    }
+
+    private fun showError(throwable: Throwable) {
+        Toast.makeText(requireContext(), throwable.message, Toast.LENGTH_SHORT).show()
     }
 
 }
