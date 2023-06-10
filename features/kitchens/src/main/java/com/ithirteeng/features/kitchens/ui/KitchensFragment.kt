@@ -27,7 +27,7 @@ class KitchensFragment : Fragment() {
 
     private val categoriesAdapter by lazy {
         CategoriesAdapter {
-            //  viewModel.navigateToDishesScreen(it.name)
+            viewModel.navigateToDishesScreen(it.name)
         }
     }
 
