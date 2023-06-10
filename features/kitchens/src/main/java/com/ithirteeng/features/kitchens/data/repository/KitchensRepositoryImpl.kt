@@ -9,6 +9,6 @@ class KitchensRepositoryImpl(
     private val api: KitchensApi,
 ) : KitchensRepository {
     override suspend fun getCategories(): List<CategoryModel> {
-        return api.getCategories().toModelsList()
+        return api.getCategories().categories.toModelsList()
     }
 }

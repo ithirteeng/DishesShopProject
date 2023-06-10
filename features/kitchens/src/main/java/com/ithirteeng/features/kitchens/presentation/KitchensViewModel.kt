@@ -13,8 +13,8 @@ class KitchensViewModel(
     private val getCategoriesUseCase: GetCategoriesUseCase,
 ) : ViewModel() {
 
-    fun navigateToDishesScreen() {
-        router.navigateToDishesScreen()
+    fun navigateToDishesScreen(categoryName: String) {
+        router.navigateToDishesScreen(categoryName)
     }
 
     private val _categoriesLiveData = MutableLiveData<List<CategoryModel>>()

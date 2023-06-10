@@ -1,5 +1,5 @@
 package com.ithirteeng.features.kitchens.presentation
 
 interface KitchensRouter {
-    fun navigateToDishesScreen()
+    fun navigateToDishesScreen(categoryName: String)
 }
