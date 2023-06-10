@@ -53,4 +53,9 @@
         <item name="android:indeterminateTint">@color/blue</item>
         <item name="android:visibility">gone</item>
     </style>
+
+    <style name="Theme.DishesShop.Toolbar">
+        <item name="android:minHeight">@dimen/size_76</item>
+        <item name="android:background">@color/main_white</item>
+    </style>
 </resources>
