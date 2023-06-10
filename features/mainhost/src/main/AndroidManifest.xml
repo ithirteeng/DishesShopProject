@@ -1,2 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest package="com.ithirteeng.features.mainhost"/>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.ithirteeng.features.mainhost">
+
+    <application>
+        <activity
+            android:name=".MainHostActivity"
+            android:exported="false" />
+    </application>
+
+</manifest>
