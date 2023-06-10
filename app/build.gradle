@@ -24,7 +24,7 @@ dependencies {
 
     implementation project(":features:mainhost")
     implementation project(":features:main")
-    implementation project(":features:category")
+    implementation project(':features:dishes')
     implementation project(":features:product")
     implementation project(':features:cart')
     implementation project(':features:kitchens')

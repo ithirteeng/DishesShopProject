@@ -1,4 +1,4 @@
-package com.ithirteeng.features.kitchens
+package com.ithirteeng.features.kitchens.ui
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.github.terrakok.cicerone.androidx.FragmentScreen
+import com.ithirteeng.features.kitchens.R
 import com.ithirteeng.features.kitchens.databinding.FragmentKitchensBinding
 
 class KitchensFragment : Fragment() {
