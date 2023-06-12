@@ -1,6 +1,7 @@
 package com.ithirteeng.dishesshopproject
 
 import android.app.Application
+import com.ithirteeng.common.cart.di.dishesCartModule
 import com.ithirteeng.dishesshopproject.di.ciceroneModule
 import com.ithirteeng.dishesshopproject.di.networkModule
 import com.ithirteeng.dishesshopproject.di.routersModule
@@ -26,7 +27,8 @@ class App : Application() {
                 routersModule,
                 mainHostModule,
                 mainModule,
-                kitchensModule
+                kitchensModule,
+                dishesCartModule
             )
         }
     }

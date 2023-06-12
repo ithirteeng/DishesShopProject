@@ -1,9 +1,9 @@
-package com.ithirteeng.common.dishes.data.dao
+package com.ithirteeng.common.cart.data.dao
 
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.Query
-import com.ithirteeng.common.dishes.data.entity.CartEntity
+import com.ithirteeng.common.cart.data.entity.CartEntity
 import retrofit2.http.DELETE
 
 @Dao

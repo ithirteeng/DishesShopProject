@@ -1,4 +1,4 @@
-package com.ithirteeng.common.dishes.data.storage
+package com.ithirteeng.common.cart.data.storage
 
 import android.app.Application
 import androidx.room.Room
