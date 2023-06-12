@@ -1,10 +1,10 @@
 package com.ithirteeng.common.cart.data.dao
 
 import androidx.room.Dao
+import androidx.room.Delete
 import androidx.room.Insert
 import androidx.room.Query
 import com.ithirteeng.common.cart.data.entity.CartEntity
-import retrofit2.http.DELETE
 
 @Dao
 interface CartDao {
@@ -18,7 +18,7 @@ interface CartDao {
     )
     fun changeQuantity(dishId: String, newQuantity: Int)
 
-    @DELETE
+    @Delete
     fun deleteDishFromCart(cartEntity: CartEntity)
 
     @Query("SELECT * FROM cart_table")

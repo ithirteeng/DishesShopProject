@@ -11,4 +11,6 @@
     <string name="some_category">Some category</string>
     <string name="some_location">Location</string>
     <string name="some_date">Some date</string>
+    <string name="kitchen_name">Kitchen Name</string>
+    <string name="dishes_name">Dishes Name</string>
 </resources>
