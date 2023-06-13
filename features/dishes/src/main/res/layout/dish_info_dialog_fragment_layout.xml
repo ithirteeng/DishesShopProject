@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:layout_marginHorizontal="@dimen/margin_16"
+    android:background="@drawable/dialog_background">
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="@style/Theme.DishesShop.ProgressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/dishImageView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/margin_16"
+        android:layout_marginTop="@dimen/margin_16"
+        android:layout_marginBottom="@dimen/margin_8"
+        android:background="@drawable/dialog_image_background"
+        android:contentDescription="@string/image_content_description"
+        android:minHeight="@dimen/size_204"
+        android:paddingHorizontal="@dimen/padding_56"
+        android:paddingVertical="@dimen/padding_14"
+        app:layout_constraintBottom_toTopOf="@+id/dishNameTextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="packed"
+        app:srcCompat="@drawable/image_placeholder"
+        tools:ignore="ImageContrastCheck" />
+
+    <TextView
+        android:id="@+id/dishNameTextView"
+        style="@style/Theme.DishesShop.DishName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/margin_16"
+        android:layout_marginBottom="@dimen/margin_8"
+        android:text="@string/dishes_name"
+        app:layout_constraintBottom_toTopOf="@+id/dishPriceTextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/dishImageView" />
+
+    <TextView
+        android:id="@+id/dishPriceTextView"
+        style="@style/Theme.DishesShop.Description"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_16"
+        android:layout_marginBottom="@dimen/margin_8"
+        android:text="@string/price"
+        app:layout_constraintBottom_toTopOf="@+id/dishDescriptionTextView"
+        app:layout_constraintEnd_toStartOf="@+id/dotTextView"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/dishNameTextView" />
+
+    <TextView
+        android:id="@+id/dotTextView"
+        style="@style/Theme.DishesShop.Description"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/margin_4"
+        android:gravity="center"
+        android:text="@string/dot"
+        android:textColor="@color/black_40"
+        app:layout_constraintBottom_toBottomOf="@+id/dishPriceTextView"
+        app:layout_constraintEnd_toStartOf="@+id/dishWeightTextView"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintStart_toEndOf="@+id/dishPriceTextView"
+        app:layout_constraintTop_toTopOf="@+id/dishPriceTextView"
+        tools:ignore="TextContrastCheck" />
+
+    <TextView
+        android:id="@+id/dishWeightTextView"
+        style="@style/Theme.DishesShop.Description"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/weight"
+        android:textColor="@color/black_40"
+        app:layout_constraintBottom_toBottomOf="@+id/dotTextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintStart_toEndOf="@+id/dotTextView"
+        app:layout_constraintTop_toTopOf="@+id/dotTextView"
+        tools:ignore="TextContrastCheck" />
+
+    <TextView
+        android:id="@+id/dishDescriptionTextView"
+        style="@style/Theme.DishesShop.Description"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/margin_16"
+        android:layout_marginBottom="@dimen/margin_16"
+        android:text="@string/description"
+        app:layout_constraintBottom_toTopOf="@+id/addToCartButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/dishPriceTextView" />
+
+    <Button
+        android:id="@+id/addToCartButton"
+        style="@style/Theme.DishesShop.BlueButtonStyle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/margin_16"
+        android:layout_marginBottom="@dimen/margin_16"
+        android:text="@string/add_to_cart"
+        android:foreground="?attr/selectableItemBackgroundBorderless"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/dishDescriptionTextView"
+        tools:ignore="VisualLintButtonSize" />
+
+    <ImageButton
+        android:id="@+id/closeDialogButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_8"
+        android:layout_marginEnd="@dimen/margin_8"
+        android:background="@color/transparent"
+        android:contentDescription="@string/image_content_description"
+        android:foreground="?attr/selectableItemBackground"
+        app:layout_constraintEnd_toEndOf="@+id/dishImageView"
+        app:layout_constraintTop_toTopOf="@+id/dishImageView"
+        app:srcCompat="@drawable/close_button_icon"
+        tools:ignore="DuplicateSpeakableTextCheck,TouchTargetSizeCheck" />
+
+    <ImageButton
+        android:id="@+id/likeButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_8"
+        android:layout_marginEnd="@dimen/margin_8"
+        android:background="@color/transparent"
+        android:contentDescription="@string/image_content_description"
+        android:foreground="?attr/selectableItemBackground"
+        app:layout_constraintEnd_toStartOf="@+id/closeDialogButton"
+        app:layout_constraintTop_toTopOf="@+id/dishImageView"
+        app:srcCompat="@drawable/like_button_icon"
+        tools:ignore="TouchTargetSizeCheck" />
+</androidx.constraintlayout.widget.ConstraintLayout>

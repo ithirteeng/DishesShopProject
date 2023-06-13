@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="image_content_description">This is an image</string>
+    <string name="app_name">DishesShop</string>
+    <string name="main">Main</string>
+    <string name="search">Search</string>
+    <string name="cart">Cart</string>
+    <string name="account">Account</string>
+    <string name="add_to_cart">Add to cart</string>
+    <string name="pay">Pay %d ₽</string>
+    <string name="some_category">Some category</string>
+    <string name="some_location">Location</string>
+    <string name="some_date">Some date</string>
+    <string name="kitchen_name">Kitchen Name</string>
+    <string name="dishes_name">Dishes Name</string>
+    <string name="price">price</string>
+    <string name="weight">weight</string>
+    <string name="description">description</string>
+    <string name="dot" translatable="false">·</string>
+    <string name="gram_short" translatable="false">g</string>
+    <string name="number" translatable="false">1</string>
+
+</resources>

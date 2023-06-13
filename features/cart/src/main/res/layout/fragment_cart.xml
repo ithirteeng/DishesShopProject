@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="@style/Theme.DishesShop.ProgressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        style="@style/Theme.DishesShop.Toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@+id/cartRecyclerView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="@dimen/padding_16"
+            android:paddingVertical="@dimen/padding_16">
+
+            <TextView
+                android:id="@+id/locationTextView"
+                style="@style/Theme.DishesShop.Headline1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/some_location"
+                app:layout_constraintBottom_toTopOf="@+id/dateTextView"
+                app:layout_constraintEnd_toStartOf="@+id/cardView"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/locationIconImageView"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_chainStyle="packed" />
+
+            <TextView
+                android:id="@+id/dateTextView"
+                style="@style/Theme.DishesShop.Subhead1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/some_date"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/locationTextView"
+                app:layout_constraintStart_toStartOf="@+id/locationTextView"
+                app:layout_constraintTop_toBottomOf="@+id/locationTextView" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardView"
+                android:layout_width="@dimen/size_44"
+                android:layout_height="@dimen/size_44"
+                app:cardCornerRadius="100dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/locationTextView"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:contentDescription="@string/image_content_description"
+                    android:src="@drawable/avatar" />
+            </androidx.cardview.widget.CardView>
+
+            <ImageView
+                android:id="@+id/locationIconImageView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/margin_8"
+                android:contentDescription="@string/image_content_description"
+                android:src="@drawable/location_icon"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/locationTextView"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.appcompat.widget.Toolbar>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/cartRecyclerView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:clipToPadding="false"
+        android:paddingHorizontal="@dimen/padding_16"
+        android:paddingTop="@dimen/padding_16"
+        android:paddingBottom="@dimen/padding_56"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar"
+        tools:listitem="@layout/cart_item_layout" />
+
+    <Button
+        android:id="@+id/buyButton"
+        style="@style/Theme.DishesShop.BlueButtonStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_16"
+        android:text="@string/pay"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

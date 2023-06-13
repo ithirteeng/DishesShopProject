@@ -10,7 +10,23 @@ dependencyResolutionManagement {
     repositories {
         google()
         mavenCentral()
+       // jcenter()
+        maven { url = 'https://jitpack.io' }
     }
 }
 rootProject.name = "DishesShopProject"
+include()
 include ':app'
+include ':common'
+include ':common:design'
+include ':common:network'
+include ':features'
+include ':features:mainhost'
+include ':features:main'
+include ':features:dishes'
+include ':features:product'
+include ':features:cart'
+include ':common:extensions'
+include ':features:kitchens'
+include ':common:helpers'
+include ':common:cart'
