@@ -21,4 +21,7 @@ dependencies {
     implementation Dependencies.CICERONE
 
     implementation project(":common:design")
+    implementation project(":common:extensions")
+    implementation project(":common:cart")
+    implementation project(":common:network")
 }

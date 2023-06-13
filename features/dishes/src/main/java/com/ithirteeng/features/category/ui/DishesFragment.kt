@@ -1,4 +1,4 @@
-package com.ithirteeng.features.category
+package com.ithirteeng.features.category.ui
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.github.terrakok.cicerone.androidx.FragmentScreen
+import com.ithirteeng.features.category.R
 import com.ithirteeng.features.category.databinding.FragmentDishesBinding
 
 class DishesFragment : Fragment() {

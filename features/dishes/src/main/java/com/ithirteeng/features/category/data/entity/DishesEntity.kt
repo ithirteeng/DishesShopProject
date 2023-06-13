@@ -1,4 +1,4 @@
-package com.ithirteeng.features.category
+package com.ithirteeng.features.category.data.entity
 
 import com.google.gson.annotations.SerializedName
 

@@ -1,7 +1,7 @@
 package com.ithirteeng.dishesshopproject.navigation.routers
 
 import com.github.terrakok.cicerone.Router
-import com.ithirteeng.features.category.DishesFragment
+import com.ithirteeng.features.category.ui.DishesFragment
 import com.ithirteeng.features.kitchens.presentation.KitchensRouter
 
 class KitchensRouterImpl(

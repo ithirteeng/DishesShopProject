@@ -5,6 +5,7 @@ import com.ithirteeng.common.cart.di.dishesCartModule
 import com.ithirteeng.dishesshopproject.di.ciceroneModule
 import com.ithirteeng.dishesshopproject.di.networkModule
 import com.ithirteeng.dishesshopproject.di.routersModule
+import com.ithirteeng.features.category.di.dishesModule
 import com.ithirteeng.features.kitchens.di.kitchensModule
 import com.ithirteeng.features.main.di.mainModule
 import com.ithirteeng.features.mainhost.di.mainHostModule
@@ -28,7 +29,8 @@ class App : Application() {
                 mainHostModule,
                 mainModule,
                 kitchensModule,
-                dishesCartModule
+                dishesCartModule,
+                dishesModule
             )
         }
     }
