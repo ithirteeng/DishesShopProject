@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="image_content_description">This is an image</string>
-    <string name="app_name">DishesShopProject</string>
+    <string name="app_name">DishesShop</string>
     <string name="main">Main</string>
     <string name="search">Search</string>
     <string name="cart">Cart</string>
@@ -16,8 +16,8 @@
     <string name="price">price</string>
     <string name="weight">weight</string>
     <string name="description">description</string>
-    <string name="dot">·</string>
-    <string name="gram_short">g</string>
-    <string name="number">1</string>
+    <string name="dot" translatable="false">·</string>
+    <string name="gram_short" translatable="false">g</string>
+    <string name="number" translatable="false">1</string>
 
 </resources>

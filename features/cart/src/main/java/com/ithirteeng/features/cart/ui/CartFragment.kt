@@ -1,7 +1,6 @@
 package com.ithirteeng.features.cart.ui
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -35,7 +34,6 @@ class CartFragment : Fragment() {
             },
             onChange = { cartModel, quantity ->
                 viewModel.changeDishQuantity(cartModel, quantity)
-                Log.d("TTT", cartModel.quantity.toString())
             }
         )
     }
@@ -59,7 +57,7 @@ class CartFragment : Fragment() {
 
     private fun setupViews() {
         binding.cartRecyclerView.adapter = cartAdapter
-        binding.locationTextView.text = DateHelper.getDateInFullFormat()
+        binding.dateTextView.text = DateHelper.getDateInFullFormat()
     }
 
     private fun getList() {
