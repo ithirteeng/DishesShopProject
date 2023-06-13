@@ -32,9 +32,7 @@ class CartFragment : Fragment() {
                 }
             },
             onChange = { cartModel, quantity ->
-                viewModel.changeDishQuantity(cartModel, quantity) {
-                    showError()
-                }
+                viewModel.changeDishQuantity(cartModel, quantity)
             }
         )
     }

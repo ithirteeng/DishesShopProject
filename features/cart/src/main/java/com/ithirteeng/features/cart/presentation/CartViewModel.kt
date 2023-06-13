@@ -32,17 +32,17 @@ class CartViewModel(
             if (list == null) {
                 onErrorAppearance()
             } else {
-                _dishesListLiveData.postValue(list!!)
+                _dishesListLiveData.postValue(list)
             }
             _completionLiveData.postValue(true)
         }
     }
 
-    fun changeDishQuantity(cartModel: CartModel, quantity: Int, onErrorAppearance: () -> Unit) {
+    fun changeDishQuantity(cartModel: CartModel, quantity: Int) {
         _completionLiveData.value = false
         viewModelScope.launch(Dispatchers.IO) {
             changeDishQuantityUseCase(cartModel.dishId, quantity)
-            getModelsList(onErrorAppearance)
+            _completionLiveData.postValue(true)
         }
     }
 

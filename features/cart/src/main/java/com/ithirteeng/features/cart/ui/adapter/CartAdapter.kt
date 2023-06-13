@@ -40,6 +40,7 @@ class CartAdapter(
             binding.dishWeightTextView.text = cartModel.weight.toString() +
                     binding.root.context.getString(R.string.gram_short)
             binding.textView.text = cartModel.name
+            binding.counterView.setValue(cartModel.quantity)
             Glide
                 .with(binding.root)
                 .load(cartModel.imageUrl)
