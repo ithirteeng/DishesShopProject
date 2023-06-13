@@ -36,10 +36,14 @@ class CounterView @JvmOverloads constructor(
         }
     }
 
-    fun onMinusButtonClick(onValueBelowZero: () -> Unit) {
+    fun onMinusButtonClick(
+        onValueBelowZero: () -> Unit,
+        onValueChange: (Int) -> Unit
+    ) {
         binding.minusButton.setOnClickListener {
             value--
             binding.quantityTextView.text = value.toString()
+            onValueChange(value)
             if (value == 0) {
                 onValueBelowZero()
             }

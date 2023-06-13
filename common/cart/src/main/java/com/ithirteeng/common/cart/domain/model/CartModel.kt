@@ -7,5 +7,5 @@ data class CartModel(
     val weight: Int,
     val description: String,
     val imageUrl: String,
-    val quantity: Int,
+    var quantity: Int,
 )

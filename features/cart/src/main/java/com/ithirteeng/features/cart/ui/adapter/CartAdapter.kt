@@ -25,11 +25,18 @@ class CartAdapter(
         private lateinit var cartModel: CartModel
 
         init {
-            binding.counterView.onMinusButtonClick {
-                deleteDish(cartModel)
-            }
+            binding.counterView.onMinusButtonClick(
+                onValueBelowZero = {
+                    deleteDish(cartModel)
+                },
+                onValueChange = {
+                    onChange(cartModel, it)
+                    cartModel.quantity = it + 1
+                }
+            )
             binding.counterView.onPlusButtonClick {
                 onChange(cartModel, it)
+                cartModel.quantity = it - 1
             }
         }
 
@@ -65,7 +72,7 @@ class CartAdapter(
 
 object CartModelDiffUtilCallBack : DiffUtil.ItemCallback<CartModel>() {
     override fun areItemsTheSame(oldItem: CartModel, newItem: CartModel): Boolean {
-        return oldItem == newItem
+        return oldItem.dishId == newItem.dishId
     }
 
     override fun areContentsTheSame(oldItem: CartModel, newItem: CartModel): Boolean {

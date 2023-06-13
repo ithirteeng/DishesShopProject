@@ -32,6 +32,7 @@ class CartViewModel(
             if (list == null) {
                 onErrorAppearance()
             } else {
+                _billLiveData.postValue(countBill(list))
                 _dishesListLiveData.postValue(list)
             }
             _completionLiveData.postValue(true)
@@ -42,6 +43,14 @@ class CartViewModel(
         _completionLiveData.value = false
         viewModelScope.launch(Dispatchers.IO) {
             changeDishQuantityUseCase(cartModel.dishId, quantity)
+            _billLiveData.postValue(
+                countBill(
+                    oldQuantity = cartModel.quantity,
+                    newQuantity = quantity,
+                    price = cartModel.price,
+                    oldBill = _billLiveData.value!!
+                )
+            )
             _completionLiveData.postValue(true)
         }
     }
@@ -54,5 +63,21 @@ class CartViewModel(
         }
     }
 
+    private val _billLiveData = MutableLiveData(0)
+
+    val billLiveData: LiveData<Int> = _billLiveData
+
+    private fun countBill(oldQuantity: Int, newQuantity: Int, price: Int, oldBill: Int): Int {
+        val result = 0 - oldQuantity * price + newQuantity * price
+        return oldBill + result
+    }
+
+    private fun countBill(list: List<CartModel>): Int {
+        var amount = 0
+        for (dish in list) {
+            amount += dish.quantity * dish.price
+        }
+        return amount
+    }
 
 }

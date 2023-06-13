@@ -1,12 +1,14 @@
 package com.ithirteeng.features.cart.ui
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.github.terrakok.cicerone.androidx.FragmentScreen
+import com.ithirteeng.common.design.R.string.pay
 import com.ithirteeng.common.helpers.DateHelper
 import com.ithirteeng.features.cart.R
 import com.ithirteeng.features.cart.databinding.FragmentCartBinding
@@ -33,6 +35,7 @@ class CartFragment : Fragment() {
             },
             onChange = { cartModel, quantity ->
                 viewModel.changeDishQuantity(cartModel, quantity)
+                Log.d("TTT", cartModel.quantity.toString())
             }
         )
     }
@@ -49,6 +52,7 @@ class CartFragment : Fragment() {
 
         observeCompletionLiveData()
         observeItemsListLiveData()
+        observeBillLiveData()
 
         return binding.root
     }
@@ -67,6 +71,12 @@ class CartFragment : Fragment() {
     private fun observeItemsListLiveData() {
         viewModel.dishesListLiveData.observe(this.viewLifecycleOwner) {
             cartAdapter.submitList(it)
+        }
+    }
+
+    private fun observeBillLiveData() {
+        viewModel.billLiveData.observe(this.viewLifecycleOwner) {
+            binding.buyButton.text = getString(pay).replace(Regex("%d"), it.toString())
         }
     }
 
