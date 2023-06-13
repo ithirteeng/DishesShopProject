@@ -3,13 +3,15 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/margin_16">
 
 
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="@dimen/size_62"
         android:layout_height="@dimen/size_62"
+        android:layout_marginEnd="@dimen/margin_8"
         android:background="@drawable/image_background"
         android:contentDescription="@string/image_content_description"
         android:padding="@dimen/padding_4"
@@ -24,6 +26,7 @@
 
     <TextView
         android:id="@+id/textView"
+        style="@style/Theme.DishesShop.FoodName"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="TextView"
@@ -39,6 +42,7 @@
         style="@style/Theme.DishesShop.Description"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_8"
         android:text="@string/price"
         app:layout_constraintBottom_toBottomOf="@+id/imageView"
         app:layout_constraintEnd_toStartOf="@+id/dotTextView"
@@ -76,7 +80,7 @@
         app:layout_constraintTop_toTopOf="@+id/dotTextView"
         tools:ignore="TextContrastCheck" />
 
-    <com.ithirteeng.features.bucket.ui.CounterView
+    <com.ithirteeng.features.cart.ui.CounterView
         android:id="@+id/counterView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

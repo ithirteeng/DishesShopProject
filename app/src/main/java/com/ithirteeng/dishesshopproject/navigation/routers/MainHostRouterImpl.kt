@@ -1,6 +1,6 @@
 package com.ithirteeng.dishesshopproject.navigation.routers
 
-import com.ithirteeng.features.bucket.ui.CartFragment
+import com.ithirteeng.features.cart.ui.CartFragment
 import com.ithirteeng.features.main.MainFragment
 import com.ithirteeng.features.mainhost.presentation.MainHostRouter
 import com.ithirteeng.features.mainhost.utils.SectionType

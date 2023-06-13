@@ -19,13 +19,15 @@
 
     <TextView
         android:id="@+id/quantityTextView"
-        android:layout_marginHorizontal="@dimen/margin_12"
         style="@style/Theme.DishesShop.DishName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
+        android:layout_marginHorizontal="@dimen/margin_8"
         android:layout_weight="1"
         android:gravity="center"
+        android:maxEms="2"
+        android:minEms="2"
         android:text="@string/number" />
 
     <ImageButton

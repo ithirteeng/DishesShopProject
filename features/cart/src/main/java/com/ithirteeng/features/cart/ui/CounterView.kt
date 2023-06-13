@@ -1,11 +1,11 @@
-package com.ithirteeng.features.bucket.ui
+package com.ithirteeng.features.cart.ui
 
 import android.content.Context
 import android.util.AttributeSet
 import android.view.LayoutInflater
 import android.widget.LinearLayout
-import com.ithirteeng.features.bucket.R
-import com.ithirteeng.features.bucket.databinding.CounterViewLayoutBinding
+import com.ithirteeng.features.cart.R
+import com.ithirteeng.features.cart.databinding.CounterViewLayoutBinding
 
 class CounterView @JvmOverloads constructor(
     context: Context,
@@ -22,21 +22,24 @@ class CounterView @JvmOverloads constructor(
         return value
     }
 
-    fun onButtonsClick(onValueBelowZero: () -> Unit) {
-        onPlusButtonClick()
-        onMinusButtonClick(onValueBelowZero)
+    fun setValue(value: Int) {
+        this.value = value
+        binding.quantityTextView.text = value.toString()
     }
 
-    private fun onPlusButtonClick() {
+
+    fun onPlusButtonClick(onValueChange: (Int) -> Unit) {
         binding.plusButton.setOnClickListener {
             value++
+            onValueChange(value)
             binding.quantityTextView.text = value.toString()
         }
     }
 
-    private fun onMinusButtonClick(onValueBelowZero: () -> Unit) {
+    fun onMinusButtonClick(onValueBelowZero: () -> Unit) {
         binding.minusButton.setOnClickListener {
             value--
+            binding.quantityTextView.text = value.toString()
             if (value == 0) {
                 onValueBelowZero()
             }

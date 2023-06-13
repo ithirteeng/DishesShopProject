@@ -4,7 +4,7 @@ import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import com.github.terrakok.cicerone.Router
 import com.github.terrakok.cicerone.androidx.FragmentScreen
-import com.ithirteeng.features.bucket.ui.CartFragment
+import com.ithirteeng.features.cart.ui.CartFragment
 import com.ithirteeng.features.main.MainFragment
 import com.ithirteeng.features.mainhost.utils.SectionType
 
