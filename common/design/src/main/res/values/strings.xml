@@ -18,5 +18,6 @@
     <string name="description">description</string>
     <string name="dot">•</string>
     <string name="gram_short">g</string>
+    <string name="number">1</string>
 
 </resources>
