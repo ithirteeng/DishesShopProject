@@ -8,6 +8,16 @@
     android:layout_marginHorizontal="@dimen/margin_16"
     android:background="@drawable/dialog_background">
 
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="@style/Theme.DishesShop.ProgressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <ImageView
         android:id="@+id/dishImageView"
         android:layout_width="match_parent"
@@ -108,9 +118,38 @@
         android:layout_marginHorizontal="@dimen/margin_16"
         android:layout_marginBottom="@dimen/margin_16"
         android:text="@string/add_to_cart"
+        android:foreground="?attr/selectableItemBackgroundBorderless"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/dishDescriptionTextView"
         tools:ignore="VisualLintButtonSize" />
+
+    <ImageButton
+        android:id="@+id/closeDialogButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_8"
+        android:layout_marginEnd="@dimen/margin_8"
+        android:background="@color/transparent"
+        android:contentDescription="@string/image_content_description"
+        android:foreground="?attr/selectableItemBackground"
+        app:layout_constraintEnd_toEndOf="@+id/dishImageView"
+        app:layout_constraintTop_toTopOf="@+id/dishImageView"
+        app:srcCompat="@drawable/close_button_icon"
+        tools:ignore="DuplicateSpeakableTextCheck,TouchTargetSizeCheck" />
+
+    <ImageButton
+        android:id="@+id/likeButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_8"
+        android:layout_marginEnd="@dimen/margin_8"
+        android:background="@color/transparent"
+        android:contentDescription="@string/image_content_description"
+        android:foreground="?attr/selectableItemBackground"
+        app:layout_constraintEnd_toStartOf="@+id/closeDialogButton"
+        app:layout_constraintTop_toTopOf="@+id/dishImageView"
+        app:srcCompat="@drawable/like_button_icon"
+        tools:ignore="TouchTargetSizeCheck" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -4,20 +4,16 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.ithirteeng.common.cart.domain.usecase.AddDishToCartUseCase
-import com.ithirteeng.features.category.data.mapper.toCartModel
 import com.ithirteeng.features.category.domain.model.DishesModel
 import com.ithirteeng.features.category.domain.model.TagModel
 import com.ithirteeng.features.category.domain.usecase.GetDishesListUseCase
 import com.ithirteeng.features.category.domain.usecase.GetTagsListUseCase
-import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
 class DishesViewModel(
     private val router: DishesRouter,
     private val getDishesListUseCase: GetDishesListUseCase,
     private val getTagsListUseCase: GetTagsListUseCase,
-    private val addDishToCartUseCase: AddDishToCartUseCase,
 ) : ViewModel() {
 
     fun exit() {
@@ -51,14 +47,6 @@ class DishesViewModel(
                     onErrorAppearance(it)
                 }
             _completionLiveData.value = true
-        }
-    }
-
-    fun addDishToCart(dishesModel: DishesModel) {
-        _completionLiveData.value = false
-        viewModelScope.launch(Dispatchers.IO) {
-            addDishToCartUseCase(dishesModel.toCartModel())
-            _completionLiveData.postValue(true)
         }
     }
 

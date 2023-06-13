@@ -2,13 +2,13 @@ package com.ithirteeng.common.cart.data.dao
 
 import androidx.room.Dao
 import androidx.room.Delete
-import androidx.room.Insert
 import androidx.room.Query
+import androidx.room.Upsert
 import com.ithirteeng.common.cart.data.entity.CartEntity
 
 @Dao
 interface CartDao {
-    @Insert
+    @Upsert
     fun addDishToCart(cartEntity: CartEntity)
 
     @Query(

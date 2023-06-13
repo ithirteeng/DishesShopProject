@@ -1,19 +1,26 @@
 package com.ithirteeng.features.category.ui
 
+import android.graphics.Color
+import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.Window
 import android.widget.Toast
+import androidx.fragment.app.DialogFragment
 import androidx.fragment.app.Fragment
 import com.github.terrakok.cicerone.androidx.FragmentScreen
 import com.ithirteeng.common.extensions.addBackPressedListener
 import com.ithirteeng.features.category.R
 import com.ithirteeng.features.category.databinding.FragmentDishesBinding
+import com.ithirteeng.features.category.di.FRAGMENT_VIEW_MODEL
 import com.ithirteeng.features.category.presentation.DishesViewModel
 import com.ithirteeng.features.category.ui.adapter.DishesAdapter
 import com.ithirteeng.features.category.ui.adapter.TagsAdapter
+import com.ithirteeng.features.category.ui.dialog.DishDialogFragment
 import org.koin.androidx.viewmodel.ext.android.viewModel
+import org.koin.core.qualifier.named
 
 class DishesFragment : Fragment() {
 
@@ -31,7 +38,7 @@ class DishesFragment : Fragment() {
 
     private lateinit var binding: FragmentDishesBinding
 
-    private val viewModel: DishesViewModel by viewModel()
+    private val viewModel: DishesViewModel by viewModel(named(FRAGMENT_VIEW_MODEL))
 
     private val tagsAdapter by lazy {
         TagsAdapter {
@@ -41,7 +48,7 @@ class DishesFragment : Fragment() {
 
     private val dishesAdapter by lazy {
         DishesAdapter {
-            //todo show dialog
+            showDialogFragment(DishDialogFragment(it))
         }
     }
 
@@ -131,6 +138,17 @@ class DishesFragment : Fragment() {
 
     private fun showError() {
         Toast.makeText(requireContext(), "ERROR", Toast.LENGTH_SHORT).show()
+    }
+
+    private fun showDialogFragment(dishDialogFragment: DishDialogFragment) {
+        setupDialogFragment(dishDialogFragment)
+        dishDialogFragment.show(childFragmentManager, "pick image dialog")
+    }
+
+    private fun setupDialogFragment(dishDialogFragment: DishDialogFragment) {
+        dishDialogFragment.dialog?.requestWindowFeature(Window.FEATURE_NO_TITLE)
+        dishDialogFragment.dialog?.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+        dishDialogFragment.setStyle(DialogFragment.STYLE_NO_FRAME, android.R.style.Theme)
     }
 
 }

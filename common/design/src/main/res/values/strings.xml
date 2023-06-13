@@ -17,5 +17,6 @@
     <string name="weight">weight</string>
     <string name="description">description</string>
     <string name="dot">•</string>
+    <string name="gram_short">g</string>
 
 </resources>
