@@ -11,4 +11,12 @@
     <string name="some_category">Some category</string>
     <string name="some_location">Location</string>
     <string name="some_date">Some date</string>
+    <string name="kitchen_name">Kitchen Name</string>
+    <string name="dishes_name">Dishes Name</string>
+    <string name="price">price</string>
+    <string name="weight">weight</string>
+    <string name="description">description</string>
+    <string name="dot">•</string>
+    <string name="gram_short">g</string>
+
 </resources>

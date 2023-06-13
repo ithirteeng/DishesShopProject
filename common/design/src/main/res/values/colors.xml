@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <color name="white">#FFFFFF</color>
     <color name="main_white">#E8E9EC</color>
+    <color name="card_color">#F8F7F5</color>
     <color name="gray">#A5A9B2</color>
     <color name="gray_light">#EFEEEC</color>
     <color name="blue">#3364E0</color>
