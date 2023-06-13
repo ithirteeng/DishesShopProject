@@ -1,5 +1,6 @@
 package com.ithirteeng.features.category.data.mapper
 
+import com.ithirteeng.common.cart.domain.model.CartModel
 import com.ithirteeng.features.category.data.entity.DishesEntity
 import com.ithirteeng.features.category.domain.model.DishesModel
 
@@ -25,4 +26,16 @@ fun List<DishesModel>.toTagsList(): List<String> {
         result += model.tags
     }
     return result.distinct()
+}
+
+fun DishesModel.toCartModel(): CartModel {
+    return CartModel(
+        dishId = this.id,
+        name = this.name,
+        price = this.price,
+        weight = this.weight,
+        description = this.description,
+        imageUrl = this.imageUrl,
+        quantity = 1
+    )
 }
