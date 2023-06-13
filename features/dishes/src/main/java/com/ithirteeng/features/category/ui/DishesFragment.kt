@@ -11,6 +11,8 @@ import com.ithirteeng.common.extensions.addBackPressedListener
 import com.ithirteeng.features.category.R
 import com.ithirteeng.features.category.databinding.FragmentDishesBinding
 import com.ithirteeng.features.category.presentation.DishesViewModel
+import com.ithirteeng.features.category.ui.adapter.DishesAdapter
+import com.ithirteeng.features.category.ui.adapter.TagsAdapter
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class DishesFragment : Fragment() {
@@ -31,6 +33,18 @@ class DishesFragment : Fragment() {
 
     private val viewModel: DishesViewModel by viewModel()
 
+    private val tagsAdapter by lazy {
+        TagsAdapter {
+            // todo filter
+        }
+    }
+
+    private val dishesAdapter by lazy {
+        DishesAdapter {
+            //todo show dialog
+        }
+    }
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?,
@@ -38,6 +52,7 @@ class DishesFragment : Fragment() {
         val layout = inflater.inflate(R.layout.fragment_dishes, container, false)
         binding = FragmentDishesBinding.bind(layout)
 
+        setupViews()
         getCategoryName()
 
         getDishesAndTagsList()
@@ -46,6 +61,11 @@ class DishesFragment : Fragment() {
         setupOnButtonClickFunctions()
 
         return binding.root
+    }
+
+    private fun setupViews() {
+        binding.tagsRecyclerView.adapter = tagsAdapter
+        binding.dishesRecyclerView.adapter = dishesAdapter
     }
 
     private fun getDishesAndTagsList() {
@@ -62,13 +82,13 @@ class DishesFragment : Fragment() {
 
     private fun observeDishesLiveData() {
         viewModel.dishesListLiveData.observe(this.viewLifecycleOwner) {
-            //todo setup adapter
+            dishesAdapter.submitList(it)
         }
     }
 
     private fun observeTagsLiveData() {
         viewModel.tagsLiveData.observe(this.viewLifecycleOwner) {
-            //todo setup adapter
+            tagsAdapter.submitList(it)
         }
     }
 
