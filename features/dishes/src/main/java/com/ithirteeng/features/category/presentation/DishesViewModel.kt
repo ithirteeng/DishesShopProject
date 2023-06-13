@@ -7,6 +7,7 @@ import androidx.lifecycle.viewModelScope
 import com.ithirteeng.common.cart.domain.usecase.AddDishToCartUseCase
 import com.ithirteeng.features.category.data.mapper.toCartModel
 import com.ithirteeng.features.category.domain.model.DishesModel
+import com.ithirteeng.features.category.domain.model.TagModel
 import com.ithirteeng.features.category.domain.usecase.GetDishesListUseCase
 import com.ithirteeng.features.category.domain.usecase.GetTagsListUseCase
 import kotlinx.coroutines.Dispatchers
@@ -31,15 +32,18 @@ class DishesViewModel(
 
     val dishesListLiveData: LiveData<List<DishesModel>> = _dishesListLiveData
 
-    private val _tagsLiveData = MutableLiveData<List<String>>(listOf())
+    private val _tagsLiveData = MutableLiveData<List<TagModel>>(listOf())
 
-    val tagsLiveData: LiveData<List<String>> = _tagsLiveData
+    val tagsLiveData: LiveData<List<TagModel>> = _tagsLiveData
+
+    private var dishesList: List<DishesModel>? = null
 
     fun getDishesList(onErrorAppearance: (error: Throwable) -> Unit) {
         _completionLiveData.value = false
         viewModelScope.launch {
             getDishesListUseCase()
                 .onSuccess {
+                    dishesList = it
                     _dishesListLiveData.value = it
                     _tagsLiveData.value = getTagsListUseCase(it)
                 }
@@ -56,6 +60,11 @@ class DishesViewModel(
             addDishToCartUseCase(dishesModel.toCartModel())
             _completionLiveData.postValue(true)
         }
+    }
+
+    fun filterList(tags: List<String>): List<DishesModel>? {
+        return dishesList?.filter { it.tags.containsAll(tags) }
+
     }
 
 

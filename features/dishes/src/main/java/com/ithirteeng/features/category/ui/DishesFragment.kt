@@ -35,7 +35,7 @@ class DishesFragment : Fragment() {
 
     private val tagsAdapter by lazy {
         TagsAdapter {
-            // todo filter
+            onTagClick()
         }
     }
 
@@ -72,6 +72,11 @@ class DishesFragment : Fragment() {
         viewModel.getDishesList {
             showError()
         }
+    }
+
+    private fun onTagClick() {
+        val list = tagsAdapter.getFilters()
+        dishesAdapter.submitList(viewModel.filterList(list))
     }
 
     private fun setupObservers() {

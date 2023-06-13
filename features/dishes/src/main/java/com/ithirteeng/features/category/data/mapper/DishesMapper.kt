@@ -3,6 +3,7 @@ package com.ithirteeng.features.category.data.mapper
 import com.ithirteeng.common.cart.domain.model.CartModel
 import com.ithirteeng.features.category.data.entity.DishesEntity
 import com.ithirteeng.features.category.domain.model.DishesModel
+import com.ithirteeng.features.category.domain.model.TagModel
 
 private fun DishesEntity.toModel(): DishesModel {
     return DishesModel(
@@ -20,10 +21,10 @@ fun List<DishesEntity>.toModelsList(): List<DishesModel> {
     return this.map { it.toModel() }
 }
 
-fun List<DishesModel>.toTagsList(): List<String> {
-    val result = arrayListOf<String>()
+fun List<DishesModel>.toTagsList(): List<TagModel> {
+    val result = arrayListOf<TagModel>()
     for (model in this) {
-        result += model.tags
+        result += model.tags.map { TagModel(it) }
     }
     return result.distinct()
 }

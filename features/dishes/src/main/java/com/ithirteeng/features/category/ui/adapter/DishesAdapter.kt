@@ -21,15 +21,9 @@ class DishesAdapter(
 
         private val binding = DishItemLayoutBinding.bind(view)
 
-        private lateinit var item: DishesModel
-
-        init {
-     //       onItemClick(item)
-        }
-
         @SuppressLint("UseCompatLoadingForDrawables")
         fun bind(item: DishesModel) {
-            this.item = item
+            onItemClick(item)
             Glide
                 .with(binding.root)
                 .load(item.imageUrl)

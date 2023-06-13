@@ -4,6 +4,7 @@ import com.ithirteeng.features.category.data.api.DishesApi
 import com.ithirteeng.features.category.data.mapper.toModelsList
 import com.ithirteeng.features.category.data.mapper.toTagsList
 import com.ithirteeng.features.category.domain.model.DishesModel
+import com.ithirteeng.features.category.domain.model.TagModel
 import com.ithirteeng.features.category.domain.repository.DishesRepository
 
 class DishesRepositoryImpl(
@@ -14,7 +15,7 @@ class DishesRepositoryImpl(
         return api.getDishes().dishes.toModelsList()
     }
 
-    override fun getTagsList(list: List<DishesModel>): List<String> {
+    override fun getTagsList(list: List<DishesModel>): List<TagModel> {
         return list.toTagsList()
     }
 }
